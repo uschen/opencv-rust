@@ -3031,7 +3031,7 @@ impl dyn TrainData + '_ {
 	/// * var_type_spec: String()
 	/// * delimiter: ','
 	/// * missch: '?'
-	pub fn load_from_csv(filename: &str, header_line_count: i32, response_start_idx: i32, response_end_idx: i32, var_type_spec: &str, delimiter: i8, missch: i8) -> Result<core::Ptr::<dyn crate::ml::TrainData>> {
+	pub fn load_from_csv(filename: &str, header_line_count: i32, response_start_idx: i32, response_end_idx: i32, var_type_spec: &str, delimiter: u8, missch: u8) -> Result<core::Ptr::<dyn crate::ml::TrainData>> {
 		extern_container_arg!(filename);
 		extern_container_arg!(var_type_spec);
 		unsafe { sys::cv_ml_TrainData_loadFromCSV_const_StringR_int_int_int_const_StringR_char_char(filename.opencv_as_extern(), header_line_count, response_start_idx, response_end_idx, var_type_spec.opencv_as_extern(), delimiter, missch) }.into_result().map(|r| unsafe { core::Ptr::<dyn crate::ml::TrainData>::opencv_from_extern(r) } )

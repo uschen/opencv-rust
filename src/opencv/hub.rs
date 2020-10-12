@@ -41,11 +41,7 @@ pub mod face;
 pub mod features2d;
 pub mod flann;
 #[cfg(feature = "contrib")]
-pub mod freetype;
-#[cfg(feature = "contrib")]
 pub mod fuzzy;
-#[cfg(feature = "contrib")]
-pub mod hdf;
 #[cfg(feature = "contrib")]
 pub mod hfs;
 pub mod highgui;
@@ -62,8 +58,6 @@ pub mod objdetect;
 #[cfg(feature = "contrib")]
 pub mod optflow;
 #[cfg(feature = "contrib")]
-pub mod ovis;
-#[cfg(feature = "contrib")]
 pub mod phase_unwrapping;
 pub mod photo;
 #[cfg(feature = "contrib")]
@@ -76,8 +70,6 @@ pub mod rapid;
 pub mod rgbd;
 #[cfg(feature = "contrib")]
 pub mod saliency;
-#[cfg(feature = "contrib")]
-pub mod sfm;
 #[cfg(feature = "contrib")]
 pub mod shape;
 #[cfg(feature = "contrib")]
@@ -97,7 +89,6 @@ pub mod video;
 pub mod videoio;
 #[cfg(feature = "contrib")]
 pub mod videostab;
-pub mod viz;
 #[cfg(feature = "contrib")]
 pub mod xfeatures2d;
 #[cfg(feature = "contrib")]
@@ -153,11 +144,7 @@ pub mod hub_prelude {
 	pub use super::features2d::prelude::*;
 	pub use super::flann::prelude::*;
 	#[cfg(feature = "contrib")]
-	pub use super::freetype::prelude::*;
-	#[cfg(feature = "contrib")]
 	pub use super::fuzzy::prelude::*;
-	#[cfg(feature = "contrib")]
-	pub use super::hdf::prelude::*;
 	#[cfg(feature = "contrib")]
 	pub use super::hfs::prelude::*;
 	pub use super::highgui::prelude::*;
@@ -174,8 +161,6 @@ pub mod hub_prelude {
 	#[cfg(feature = "contrib")]
 	pub use super::optflow::prelude::*;
 	#[cfg(feature = "contrib")]
-	pub use super::ovis::prelude::*;
-	#[cfg(feature = "contrib")]
 	pub use super::phase_unwrapping::prelude::*;
 	pub use super::photo::prelude::*;
 	#[cfg(feature = "contrib")]
@@ -188,8 +173,6 @@ pub mod hub_prelude {
 	pub use super::rgbd::prelude::*;
 	#[cfg(feature = "contrib")]
 	pub use super::saliency::prelude::*;
-	#[cfg(feature = "contrib")]
-	pub use super::sfm::prelude::*;
 	#[cfg(feature = "contrib")]
 	pub use super::shape::prelude::*;
 	#[cfg(feature = "contrib")]
@@ -209,7 +192,6 @@ pub mod hub_prelude {
 	pub use super::videoio::prelude::*;
 	#[cfg(feature = "contrib")]
 	pub use super::videostab::prelude::*;
-	pub use super::viz::prelude::*;
 	#[cfg(feature = "contrib")]
 	pub use super::xfeatures2d::prelude::*;
 	#[cfg(feature = "contrib")]

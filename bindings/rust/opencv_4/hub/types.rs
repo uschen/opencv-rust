@@ -2705,77 +2705,6 @@ mod core_types {
 		}
 	}
 	
-	pub type VectorOfVectorOfi8 = core::Vector::<core::Vector::<i8>>;
-	
-	impl VectorOfVectorOfi8 {
-		pub fn as_raw_VectorOfVectorOfi8(&self) -> *const c_void { self.as_raw() }
-		pub fn as_raw_mut_VectorOfVectorOfi8(&mut self) -> *mut c_void { self.as_raw_mut() }
-	}
-	
-	vector_extern! { core::Vector::<i8>, *const c_void, *mut c_void,
-		cv_VectorOfVectorOfi8_new, cv_VectorOfVectorOfi8_delete,
-		cv_VectorOfVectorOfi8_len, cv_VectorOfVectorOfi8_is_empty,
-		cv_VectorOfVectorOfi8_capacity, cv_VectorOfVectorOfi8_shrink_to_fit,
-		cv_VectorOfVectorOfi8_reserve, cv_VectorOfVectorOfi8_remove,
-		cv_VectorOfVectorOfi8_swap, cv_VectorOfVectorOfi8_clear,
-		cv_VectorOfVectorOfi8_get, cv_VectorOfVectorOfi8_set,
-		cv_VectorOfVectorOfi8_push, cv_VectorOfVectorOfi8_insert,
-	}
-	vector_non_copy_or_bool! { clone core::Vector::<i8> }
-	
-	unsafe impl Send for core::Vector::<core::Vector::<i8>> {}
-	
-	impl core::ToInputArray for VectorOfVectorOfi8 {
-		#[inline]
-		fn input_array(&self) -> Result<core::_InputArray> {
-			extern "C" { fn cv_VectorOfVectorOfi8_input_array(instance: *const c_void) -> sys::Result<*mut c_void>; }
-			unsafe { cv_VectorOfVectorOfi8_input_array(self.as_raw_VectorOfVectorOfi8()) }
-				.into_result()
-				.map(|ptr| unsafe { core::_InputArray::from_raw(ptr) } )
-		}
-	}
-	
-	impl core::ToInputArray for &VectorOfVectorOfi8 {
-		#[inline]
-		fn input_array(&self) -> Result<core::_InputArray> {
-			(*self).input_array()
-		}
-	}
-	
-	impl core::ToOutputArray for VectorOfVectorOfi8 {
-		#[inline]
-		fn output_array(&mut self) -> Result<core::_OutputArray> {
-			extern "C" { fn cv_VectorOfVectorOfi8_output_array(instance: *mut c_void) -> sys::Result<*mut c_void>; }
-			unsafe { cv_VectorOfVectorOfi8_output_array(self.as_raw_mut_VectorOfVectorOfi8()) }
-				.into_result()
-				.map(|ptr| unsafe { core::_OutputArray::from_raw(ptr) })
-		}
-	}
-	
-	impl core::ToOutputArray for &mut VectorOfVectorOfi8 {
-		#[inline]
-		fn output_array(&mut self) -> Result<core::_OutputArray> {
-			(*self).output_array()
-		}
-	}
-	
-	impl core::ToInputOutputArray for VectorOfVectorOfi8 {
-		#[inline]
-		fn input_output_array(&mut self) -> Result<core::_InputOutputArray> {
-			extern "C" { fn cv_VectorOfVectorOfi8_input_output_array(instance: *mut c_void) -> sys::Result<*mut c_void>; }
-			unsafe { cv_VectorOfVectorOfi8_input_output_array(self.as_raw_mut_VectorOfVectorOfi8()) }
-				.into_result()
-				.map(|ptr| unsafe { core::_InputOutputArray::from_raw(ptr) })
-		}
-	}
-	
-	impl core::ToInputOutputArray for &mut VectorOfVectorOfi8 {
-		#[inline]
-		fn input_output_array(&mut self) -> Result<core::_InputOutputArray> {
-			(*self).input_output_array()
-		}
-	}
-	
 	pub type VectorOfVectorOfu8 = core::Vector::<core::Vector::<u8>>;
 	
 	impl VectorOfVectorOfu8 {
@@ -3083,80 +3012,6 @@ mod core_types {
 	}
 	
 	impl core::ToInputOutputArray for &mut VectorOfi32 {
-		#[inline]
-		fn input_output_array(&mut self) -> Result<core::_InputOutputArray> {
-			(*self).input_output_array()
-		}
-	}
-	
-	pub type VectorOfi8 = core::Vector::<i8>;
-	
-	impl VectorOfi8 {
-		pub fn as_raw_VectorOfi8(&self) -> *const c_void { self.as_raw() }
-		pub fn as_raw_mut_VectorOfi8(&mut self) -> *mut c_void { self.as_raw_mut() }
-	}
-	
-	vector_extern! { i8, *const c_void, *mut c_void,
-		cv_VectorOfi8_new, cv_VectorOfi8_delete,
-		cv_VectorOfi8_len, cv_VectorOfi8_is_empty,
-		cv_VectorOfi8_capacity, cv_VectorOfi8_shrink_to_fit,
-		cv_VectorOfi8_reserve, cv_VectorOfi8_remove,
-		cv_VectorOfi8_swap, cv_VectorOfi8_clear,
-		cv_VectorOfi8_get, cv_VectorOfi8_set,
-		cv_VectorOfi8_push, cv_VectorOfi8_insert,
-	}
-	vector_copy_non_bool! { i8, *const c_void, *mut c_void,
-		cv_VectorOfi8_data, cv_VectorOfi8_data_mut,
-		cv_VectorOfi8_clone,
-	}
-	
-	unsafe impl Send for core::Vector::<i8> {}
-	
-	impl core::ToInputArray for VectorOfi8 {
-		#[inline]
-		fn input_array(&self) -> Result<core::_InputArray> {
-			extern "C" { fn cv_VectorOfi8_input_array(instance: *const c_void) -> sys::Result<*mut c_void>; }
-			unsafe { cv_VectorOfi8_input_array(self.as_raw_VectorOfi8()) }
-				.into_result()
-				.map(|ptr| unsafe { core::_InputArray::from_raw(ptr) } )
-		}
-	}
-	
-	impl core::ToInputArray for &VectorOfi8 {
-		#[inline]
-		fn input_array(&self) -> Result<core::_InputArray> {
-			(*self).input_array()
-		}
-	}
-	
-	impl core::ToOutputArray for VectorOfi8 {
-		#[inline]
-		fn output_array(&mut self) -> Result<core::_OutputArray> {
-			extern "C" { fn cv_VectorOfi8_output_array(instance: *mut c_void) -> sys::Result<*mut c_void>; }
-			unsafe { cv_VectorOfi8_output_array(self.as_raw_mut_VectorOfi8()) }
-				.into_result()
-				.map(|ptr| unsafe { core::_OutputArray::from_raw(ptr) })
-		}
-	}
-	
-	impl core::ToOutputArray for &mut VectorOfi8 {
-		#[inline]
-		fn output_array(&mut self) -> Result<core::_OutputArray> {
-			(*self).output_array()
-		}
-	}
-	
-	impl core::ToInputOutputArray for VectorOfi8 {
-		#[inline]
-		fn input_output_array(&mut self) -> Result<core::_InputOutputArray> {
-			extern "C" { fn cv_VectorOfi8_input_output_array(instance: *mut c_void) -> sys::Result<*mut c_void>; }
-			unsafe { cv_VectorOfi8_input_output_array(self.as_raw_mut_VectorOfi8()) }
-				.into_result()
-				.map(|ptr| unsafe { core::_InputOutputArray::from_raw(ptr) })
-		}
-	}
-	
-	impl core::ToInputOutputArray for &mut VectorOfi8 {
 		#[inline]
 		fn input_output_array(&mut self) -> Result<core::_InputOutputArray> {
 			(*self).input_output_array()
@@ -6288,59 +6143,6 @@ mod flann_types {
 pub use flann_types::*;
 
 #[cfg(feature = "contrib")]
-mod freetype_types {
-	use crate::{mod_prelude::*, core, types, sys};
-
-	pub type PtrOfFreeType2 = core::Ptr::<dyn crate::freetype::FreeType2>;
-	
-	ptr_extern! { dyn crate::freetype::FreeType2,
-		cv_PtrOfFreeType2_delete, cv_PtrOfFreeType2_get_inner_ptr, cv_PtrOfFreeType2_get_inner_ptr_mut
-	}
-	
-	impl PtrOfFreeType2 {
-		#[inline] pub fn as_raw_PtrOfFreeType2(&self) -> *const c_void { self.as_raw() }
-		#[inline] pub fn as_raw_mut_PtrOfFreeType2(&mut self) -> *mut c_void { self.as_raw_mut() }
-	}
-	
-	impl core::AlgorithmTrait for PtrOfFreeType2 {
-		#[inline] fn as_raw_Algorithm(&self) -> *const c_void { self.inner_as_raw() }
-		#[inline] fn as_raw_mut_Algorithm(&mut self) -> *mut c_void { self.inner_as_raw_mut() }
-	}
-	
-	impl crate::freetype::FreeType2 for PtrOfFreeType2 {
-		#[inline] fn as_raw_FreeType2(&self) -> *const c_void { self.inner_as_raw() }
-		#[inline] fn as_raw_mut_FreeType2(&mut self) -> *mut c_void { self.inner_as_raw_mut() }
-	}
-	
-}
-#[cfg(feature = "contrib")]
-pub use freetype_types::*;
-
-#[cfg(feature = "contrib")]
-mod hdf_types {
-	use crate::{mod_prelude::*, core, types, sys};
-
-	pub type PtrOfHDF5 = core::Ptr::<dyn crate::hdf::HDF5>;
-	
-	ptr_extern! { dyn crate::hdf::HDF5,
-		cv_PtrOfHDF5_delete, cv_PtrOfHDF5_get_inner_ptr, cv_PtrOfHDF5_get_inner_ptr_mut
-	}
-	
-	impl PtrOfHDF5 {
-		#[inline] pub fn as_raw_PtrOfHDF5(&self) -> *const c_void { self.as_raw() }
-		#[inline] pub fn as_raw_mut_PtrOfHDF5(&mut self) -> *mut c_void { self.as_raw_mut() }
-	}
-	
-	impl crate::hdf::HDF5 for PtrOfHDF5 {
-		#[inline] fn as_raw_HDF5(&self) -> *const c_void { self.inner_as_raw() }
-		#[inline] fn as_raw_mut_HDF5(&mut self) -> *mut c_void { self.inner_as_raw_mut() }
-	}
-	
-}
-#[cfg(feature = "contrib")]
-pub use hdf_types::*;
-
-#[cfg(feature = "contrib")]
 mod hfs_types {
 	use crate::{mod_prelude::*, core, types, sys};
 
@@ -7417,30 +7219,6 @@ mod optflow_types {
 }
 #[cfg(feature = "contrib")]
 pub use optflow_types::*;
-
-#[cfg(feature = "contrib")]
-mod ovis_types {
-	use crate::{mod_prelude::*, core, types, sys};
-
-	pub type PtrOfWindowScene = core::Ptr::<dyn crate::ovis::WindowScene>;
-	
-	ptr_extern! { dyn crate::ovis::WindowScene,
-		cv_PtrOfWindowScene_delete, cv_PtrOfWindowScene_get_inner_ptr, cv_PtrOfWindowScene_get_inner_ptr_mut
-	}
-	
-	impl PtrOfWindowScene {
-		#[inline] pub fn as_raw_PtrOfWindowScene(&self) -> *const c_void { self.as_raw() }
-		#[inline] pub fn as_raw_mut_PtrOfWindowScene(&mut self) -> *mut c_void { self.as_raw_mut() }
-	}
-	
-	impl crate::ovis::WindowScene for PtrOfWindowScene {
-		#[inline] fn as_raw_WindowScene(&self) -> *const c_void { self.inner_as_raw() }
-		#[inline] fn as_raw_mut_WindowScene(&mut self) -> *mut c_void { self.inner_as_raw_mut() }
-	}
-	
-}
-#[cfg(feature = "contrib")]
-pub use ovis_types::*;
 
 #[cfg(feature = "contrib")]
 mod phase_unwrapping_types {
@@ -8611,35 +8389,6 @@ mod saliency_types {
 }
 #[cfg(feature = "contrib")]
 pub use saliency_types::*;
-
-#[cfg(feature = "contrib")]
-mod sfm_types {
-	use crate::{mod_prelude::*, core, types, sys};
-
-	pub type PtrOfSFMLibmvEuclideanReconstruction = core::Ptr::<dyn crate::sfm::SFMLibmvEuclideanReconstruction>;
-	
-	ptr_extern! { dyn crate::sfm::SFMLibmvEuclideanReconstruction,
-		cv_PtrOfSFMLibmvEuclideanReconstruction_delete, cv_PtrOfSFMLibmvEuclideanReconstruction_get_inner_ptr, cv_PtrOfSFMLibmvEuclideanReconstruction_get_inner_ptr_mut
-	}
-	
-	impl PtrOfSFMLibmvEuclideanReconstruction {
-		#[inline] pub fn as_raw_PtrOfSFMLibmvEuclideanReconstruction(&self) -> *const c_void { self.as_raw() }
-		#[inline] pub fn as_raw_mut_PtrOfSFMLibmvEuclideanReconstruction(&mut self) -> *mut c_void { self.as_raw_mut() }
-	}
-	
-	impl crate::sfm::BaseSFM for PtrOfSFMLibmvEuclideanReconstruction {
-		#[inline] fn as_raw_BaseSFM(&self) -> *const c_void { self.inner_as_raw() }
-		#[inline] fn as_raw_mut_BaseSFM(&mut self) -> *mut c_void { self.inner_as_raw_mut() }
-	}
-	
-	impl crate::sfm::SFMLibmvEuclideanReconstruction for PtrOfSFMLibmvEuclideanReconstruction {
-		#[inline] fn as_raw_SFMLibmvEuclideanReconstruction(&self) -> *const c_void { self.inner_as_raw() }
-		#[inline] fn as_raw_mut_SFMLibmvEuclideanReconstruction(&mut self) -> *mut c_void { self.inner_as_raw_mut() }
-	}
-	
-}
-#[cfg(feature = "contrib")]
-pub use sfm_types::*;
 
 #[cfg(feature = "contrib")]
 mod shape_types {

@@ -130,8 +130,8 @@ pub fn draw_keylines(image: &core::Mat, keylines: &core::Vector::<crate::line_de
 /// * single_line_color: Scalar::all(-1)
 /// * matches_mask: std::vector<char>()
 /// * flags: DrawLinesMatchesFlags::DEFAULT
-pub fn draw_line_matches(img1: &core::Mat, keylines1: &core::Vector::<crate::line_descriptor::KeyLine>, img2: &core::Mat, keylines2: &core::Vector::<crate::line_descriptor::KeyLine>, matches1to2: &core::Vector::<core::DMatch>, out_img: &mut core::Mat, match_color: core::Scalar, single_line_color: core::Scalar, matches_mask: &core::Vector::<i8>, flags: i32) -> Result<()> {
-	unsafe { sys::cv_line_descriptor_drawLineMatches_const_MatR_const_vector_KeyLine_R_const_MatR_const_vector_KeyLine_R_const_vector_DMatch_R_MatR_const_ScalarR_const_ScalarR_const_vector_char_R_int(img1.as_raw_Mat(), keylines1.as_raw_VectorOfKeyLine(), img2.as_raw_Mat(), keylines2.as_raw_VectorOfKeyLine(), matches1to2.as_raw_VectorOfDMatch(), out_img.as_raw_mut_Mat(), &match_color, &single_line_color, matches_mask.as_raw_VectorOfi8(), flags) }.into_result()
+pub fn draw_line_matches(img1: &core::Mat, keylines1: &core::Vector::<crate::line_descriptor::KeyLine>, img2: &core::Mat, keylines2: &core::Vector::<crate::line_descriptor::KeyLine>, matches1to2: &core::Vector::<core::DMatch>, out_img: &mut core::Mat, match_color: core::Scalar, single_line_color: core::Scalar, matches_mask: &core::Vector::<u8>, flags: i32) -> Result<()> {
+	unsafe { sys::cv_line_descriptor_drawLineMatches_const_MatR_const_vector_KeyLine_R_const_MatR_const_vector_KeyLine_R_const_vector_DMatch_R_MatR_const_ScalarR_const_ScalarR_const_vector_char_R_int(img1.as_raw_Mat(), keylines1.as_raw_VectorOfKeyLine(), img2.as_raw_Mat(), keylines2.as_raw_VectorOfKeyLine(), matches1to2.as_raw_VectorOfDMatch(), out_img.as_raw_mut_Mat(), &match_color, &single_line_color, matches_mask.as_raw_VectorOfu8(), flags) }.into_result()
 }
 
 /// Class implements both functionalities for detection of lines and computation of their

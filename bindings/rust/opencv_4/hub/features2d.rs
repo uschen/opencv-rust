@@ -314,11 +314,11 @@ pub fn draw_keypoints(image: &dyn core::ToInputArray, keypoints: &core::Vector::
 /// * single_point_color: Scalar::all(-1)
 /// * matches_mask: std::vector<char>()
 /// * flags: DrawMatchesFlags::DEFAULT
-pub fn draw_matches(img1: &dyn core::ToInputArray, keypoints1: &core::Vector::<core::KeyPoint>, img2: &dyn core::ToInputArray, keypoints2: &core::Vector::<core::KeyPoint>, matches1to2: &core::Vector::<core::DMatch>, out_img: &mut dyn core::ToInputOutputArray, match_color: core::Scalar, single_point_color: core::Scalar, matches_mask: &core::Vector::<i8>, flags: crate::features2d::DrawMatchesFlags) -> Result<()> {
+pub fn draw_matches(img1: &dyn core::ToInputArray, keypoints1: &core::Vector::<core::KeyPoint>, img2: &dyn core::ToInputArray, keypoints2: &core::Vector::<core::KeyPoint>, matches1to2: &core::Vector::<core::DMatch>, out_img: &mut dyn core::ToInputOutputArray, match_color: core::Scalar, single_point_color: core::Scalar, matches_mask: &core::Vector::<u8>, flags: crate::features2d::DrawMatchesFlags) -> Result<()> {
 	input_array_arg!(img1);
 	input_array_arg!(img2);
 	input_output_array_arg!(out_img);
-	unsafe { sys::cv_drawMatches_const__InputArrayR_const_vector_KeyPoint_R_const__InputArrayR_const_vector_KeyPoint_R_const_vector_DMatch_R_const__InputOutputArrayR_const_ScalarR_const_ScalarR_const_vector_char_R_DrawMatchesFlags(img1.as_raw__InputArray(), keypoints1.as_raw_VectorOfKeyPoint(), img2.as_raw__InputArray(), keypoints2.as_raw_VectorOfKeyPoint(), matches1to2.as_raw_VectorOfDMatch(), out_img.as_raw__InputOutputArray(), &match_color, &single_point_color, matches_mask.as_raw_VectorOfi8(), flags) }.into_result()
+	unsafe { sys::cv_drawMatches_const__InputArrayR_const_vector_KeyPoint_R_const__InputArrayR_const_vector_KeyPoint_R_const_vector_DMatch_R_const__InputOutputArrayR_const_ScalarR_const_ScalarR_const_vector_char_R_DrawMatchesFlags(img1.as_raw__InputArray(), keypoints1.as_raw_VectorOfKeyPoint(), img2.as_raw__InputArray(), keypoints2.as_raw_VectorOfKeyPoint(), matches1to2.as_raw_VectorOfDMatch(), out_img.as_raw__InputOutputArray(), &match_color, &single_point_color, matches_mask.as_raw_VectorOfu8(), flags) }.into_result()
 }
 
 /// Draws the found matches of keypoints from two images.
@@ -351,11 +351,11 @@ pub fn draw_matches(img1: &dyn core::ToInputArray, keypoints1: &core::Vector::<c
 /// * single_point_color: Scalar::all(-1)
 /// * matches_mask: std::vector<std::vector<char>>()
 /// * flags: DrawMatchesFlags::DEFAULT
-pub fn draw_matches_knn(img1: &dyn core::ToInputArray, keypoints1: &core::Vector::<core::KeyPoint>, img2: &dyn core::ToInputArray, keypoints2: &core::Vector::<core::KeyPoint>, matches1to2: &core::Vector::<core::Vector::<core::DMatch>>, out_img: &mut dyn core::ToInputOutputArray, match_color: core::Scalar, single_point_color: core::Scalar, matches_mask: &core::Vector::<core::Vector::<i8>>, flags: crate::features2d::DrawMatchesFlags) -> Result<()> {
+pub fn draw_matches_knn(img1: &dyn core::ToInputArray, keypoints1: &core::Vector::<core::KeyPoint>, img2: &dyn core::ToInputArray, keypoints2: &core::Vector::<core::KeyPoint>, matches1to2: &core::Vector::<core::Vector::<core::DMatch>>, out_img: &mut dyn core::ToInputOutputArray, match_color: core::Scalar, single_point_color: core::Scalar, matches_mask: &core::Vector::<core::Vector::<u8>>, flags: crate::features2d::DrawMatchesFlags) -> Result<()> {
 	input_array_arg!(img1);
 	input_array_arg!(img2);
 	input_output_array_arg!(out_img);
-	unsafe { sys::cv_drawMatches_const__InputArrayR_const_vector_KeyPoint_R_const__InputArrayR_const_vector_KeyPoint_R_const_vector_vector_DMatch__R_const__InputOutputArrayR_const_ScalarR_const_ScalarR_const_vector_vector_char__R_DrawMatchesFlags(img1.as_raw__InputArray(), keypoints1.as_raw_VectorOfKeyPoint(), img2.as_raw__InputArray(), keypoints2.as_raw_VectorOfKeyPoint(), matches1to2.as_raw_VectorOfVectorOfDMatch(), out_img.as_raw__InputOutputArray(), &match_color, &single_point_color, matches_mask.as_raw_VectorOfVectorOfi8(), flags) }.into_result()
+	unsafe { sys::cv_drawMatches_const__InputArrayR_const_vector_KeyPoint_R_const__InputArrayR_const_vector_KeyPoint_R_const_vector_vector_DMatch__R_const__InputOutputArrayR_const_ScalarR_const_ScalarR_const_vector_vector_char__R_DrawMatchesFlags(img1.as_raw__InputArray(), keypoints1.as_raw_VectorOfKeyPoint(), img2.as_raw__InputArray(), keypoints2.as_raw_VectorOfKeyPoint(), matches1to2.as_raw_VectorOfVectorOfDMatch(), out_img.as_raw__InputOutputArray(), &match_color, &single_point_color, matches_mask.as_raw_VectorOfVectorOfu8(), flags) }.into_result()
 }
 
 /// *************************************************************************************\

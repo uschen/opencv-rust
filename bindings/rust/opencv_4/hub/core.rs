@@ -287,7 +287,7 @@ pub const CV_DEPTH_MAX: i32 = (1<<CV_CN_SHIFT);
 pub const CV_ENABLE_UNROLLED: i32 = 1;
 pub const CV_FMA3: i32 = 0;
 pub const CV_FP16: i32 = 0;
-pub const CV_FP16_TYPE: i32 = 0;
+pub const CV_FP16_TYPE: i32 = 1;
 pub const CV_HAL_BORDER_CONSTANT: i32 = 0;
 pub const CV_HAL_BORDER_ISOLATED: i32 = 16;
 pub const CV_HAL_BORDER_REFLECT: i32 = 2;
@@ -341,13 +341,13 @@ pub const CV_MAT_CONT_FLAG_SHIFT: i32 = 14;
 pub const CV_MAT_DEPTH_MASK: i32 = (CV_DEPTH_MAX-1);
 pub const CV_MAT_TYPE_MASK: i32 = (CV_DEPTH_MAX*CV_CN_MAX-1);
 pub const CV_MINOR_VERSION: i32 = CV_VERSION_MINOR;
-pub const CV_MMX: i32 = 1;
+pub const CV_MMX: i32 = 0;
 pub const CV_MSA: i32 = 0;
-pub const CV_NEON: i32 = 0;
+pub const CV_NEON: i32 = 1;
 pub const CV_PI: f64 = 3.1415926535897932384626433832795;
 pub const CV_POPCNT: i32 = 0;
-pub const CV_SSE: i32 = 1;
-pub const CV_SSE2: i32 = 1;
+pub const CV_SSE: i32 = 0;
+pub const CV_SSE2: i32 = 0;
 pub const CV_SSE3: i32 = 0;
 pub const CV_SSE4_1: i32 = 0;
 pub const CV_SSE4_2: i32 = 0;
@@ -579,7 +579,6 @@ pub const OCL_VECTOR_DEFAULT: i32 = 0;
 pub const OCL_VECTOR_MAX: i32 = 1;
 pub const OCL_VECTOR_OWN: i32 = 0;
 pub const OPENCV_ABI_COMPATIBILITY: i32 = 400;
-pub const OPENCV_USE_FASTMATH_BUILTINS: i32 = 1;
 /// OpenCL API call error
 pub const OpenCLApiCallError: i32 = -220;
 pub const OpenCLDoubleNotSupported: i32 = -221;
@@ -18480,8 +18479,8 @@ pub trait ProgramTrait {
 	/// 
 	/// ## Parameters
 	/// * binary:[out] output buffer
-	fn get_binary(&self, binary: &mut core::Vector::<i8>) -> Result<()> {
-		unsafe { sys::cv_ocl_Program_getBinary_const_vector_char_R(self.as_raw_Program(), binary.as_raw_mut_VectorOfi8()) }.into_result()
+	fn get_binary(&self, binary: &mut core::Vector::<u8>) -> Result<()> {
+		unsafe { sys::cv_ocl_Program_getBinary_const_vector_char_R(self.as_raw_Program(), binary.as_raw_mut_VectorOfu8()) }.into_result()
 	}
 	
 	fn read(&mut self, buf: &str, buildflags: &str) -> Result<bool> {

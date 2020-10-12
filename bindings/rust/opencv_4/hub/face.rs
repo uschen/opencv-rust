@@ -224,7 +224,7 @@ pub fn load_training_data_1(image_list: &str, ground_truth: &str, images: &mut c
 /// ## C++ default parameters
 /// * delim: ' '
 /// * offset: 0.0f
-pub fn load_training_data(filename: &str, images: &mut core::Vector::<String>, face_points: &mut dyn core::ToOutputArray, delim: i8, offset: f32) -> Result<bool> {
+pub fn load_training_data(filename: &str, images: &mut core::Vector::<String>, face_points: &mut dyn core::ToOutputArray, delim: u8, offset: f32) -> Result<bool> {
 	extern_container_arg!(mut filename);
 	output_array_arg!(face_points);
 	unsafe { sys::cv_face_loadTrainingData_String_vector_String_R_const__OutputArrayR_char_float(filename.opencv_as_extern_mut(), images.as_raw_mut_VectorOfString(), face_points.as_raw__OutputArray(), delim, offset) }.into_result()

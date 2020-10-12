@@ -172,9 +172,6 @@ pub enum LocalBinarizationMethods {
 
 opencv_type_enum! { crate::ximgproc::LocalBinarizationMethods }
 
-///   Specifies the degree of rules validation.
-/// @details The enum specifies the degree of rules validation. This can be used,
-///          for example, to choose a proper way of input arguments validation.
 #[repr(C)]
 #[derive(Copy, Clone, Debug, PartialEq)]
 pub enum RulesOption {

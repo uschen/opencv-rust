@@ -1456,7 +1456,7 @@ impl VideoWriter {
 	/// 
 	/// This static method constructs the fourcc code of the codec to be used in the constructor
 	/// VideoWriter::VideoWriter or VideoWriter::open.
-	pub fn fourcc(c1: i8, c2: i8, c3: i8, c4: i8) -> Result<i32> {
+	pub fn fourcc(c1: u8, c2: u8, c3: u8, c4: u8) -> Result<i32> {
 		unsafe { sys::cv_VideoWriter_fourcc_char_char_char_char(c1, c2, c3, c4) }.into_result()
 	}
 	

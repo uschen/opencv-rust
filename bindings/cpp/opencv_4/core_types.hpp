@@ -3233,153 +3233,75 @@ extern "C" {
 
 
 extern "C" {
-	void cv_VectorOfVectorOfi8_delete(std::vector<std::vector<char>>* instance) {
+	void cv_VectorOfVectorOfu8_delete(std::vector<std::vector<char>>* instance) {
 		delete instance;
 	}
 
-	std::vector<std::vector<char>>* cv_VectorOfVectorOfi8_new() {
+	std::vector<std::vector<char>>* cv_VectorOfVectorOfu8_new() {
 		return new std::vector<std::vector<char>>();
 	}
 
-	size_t cv_VectorOfVectorOfi8_len(const std::vector<std::vector<char>>* instance) {
+	size_t cv_VectorOfVectorOfu8_len(const std::vector<std::vector<char>>* instance) {
 		return instance->size();
 	}
 
-	bool cv_VectorOfVectorOfi8_is_empty(const std::vector<std::vector<char>>* instance) {
+	bool cv_VectorOfVectorOfu8_is_empty(const std::vector<std::vector<char>>* instance) {
 		return instance->empty();
 	}
 
-	size_t cv_VectorOfVectorOfi8_capacity(const std::vector<std::vector<char>>* instance) {
+	size_t cv_VectorOfVectorOfu8_capacity(const std::vector<std::vector<char>>* instance) {
 		return instance->capacity();
 	}
 
-	void cv_VectorOfVectorOfi8_shrink_to_fit(std::vector<std::vector<char>>* instance) {
+	void cv_VectorOfVectorOfu8_shrink_to_fit(std::vector<std::vector<char>>* instance) {
 		instance->shrink_to_fit();
 	}
 
-	void cv_VectorOfVectorOfi8_reserve(std::vector<std::vector<char>>* instance, size_t additional) {
+	void cv_VectorOfVectorOfu8_reserve(std::vector<std::vector<char>>* instance, size_t additional) {
 		instance->reserve(instance->size() + additional);
 	}
 
-	void cv_VectorOfVectorOfi8_remove(std::vector<std::vector<char>>* instance, size_t index) {
+	void cv_VectorOfVectorOfu8_remove(std::vector<std::vector<char>>* instance, size_t index) {
 		instance->erase(instance->begin() + index);
 	}
 
-	void cv_VectorOfVectorOfi8_swap(std::vector<std::vector<char>>* instance, size_t index1, size_t index2) {
+	void cv_VectorOfVectorOfu8_swap(std::vector<std::vector<char>>* instance, size_t index1, size_t index2) {
 		std::swap((*instance)[index1], (*instance)[index2]);
 	}
 
-	void cv_VectorOfVectorOfi8_clear(std::vector<std::vector<char>>* instance) {
+	void cv_VectorOfVectorOfu8_clear(std::vector<std::vector<char>>* instance) {
 		instance->clear();
 	}
 
-	void cv_VectorOfVectorOfi8_push(std::vector<std::vector<char>>* instance, std::vector<char>* val) {
+	void cv_VectorOfVectorOfu8_push(std::vector<std::vector<char>>* instance, std::vector<char>* val) {
 		instance->push_back(*val);
 	}
 
-	void cv_VectorOfVectorOfi8_insert(std::vector<std::vector<char>>* instance, size_t index, std::vector<char>* val) {
+	void cv_VectorOfVectorOfu8_insert(std::vector<std::vector<char>>* instance, size_t index, std::vector<char>* val) {
 		instance->insert(instance->begin() + index, *val);
 	}
 
-	Result<std::vector<char>*> cv_VectorOfVectorOfi8_get(const std::vector<std::vector<char>>* instance, size_t index) {
+	Result<std::vector<char>*> cv_VectorOfVectorOfu8_get(const std::vector<std::vector<char>>* instance, size_t index) {
 		return Ok<std::vector<char>*>(new std::vector<char>((*instance)[index]));
 	}
 
-	void cv_VectorOfVectorOfi8_set(std::vector<std::vector<char>>* instance, size_t index, std::vector<char>* val) {
+	void cv_VectorOfVectorOfu8_set(std::vector<std::vector<char>>* instance, size_t index, std::vector<char>* val) {
 		(*instance)[index] = *val;
 	}
 
-	Result<cv::_InputArray*> cv_VectorOfVectorOfi8_input_array(std::vector<std::vector<char>>* instance) {
+	Result<cv::_InputArray*> cv_VectorOfVectorOfu8_input_array(std::vector<std::vector<char>>* instance) {
 		try {
 			return Ok(new cv::_InputArray(*instance));
 		} OCVRS_CATCH(Result<cv::_InputArray*>)
 	}
 	
-	Result<cv::_OutputArray*> cv_VectorOfVectorOfi8_output_array(std::vector<std::vector<char>>* instance) {
+	Result<cv::_OutputArray*> cv_VectorOfVectorOfu8_output_array(std::vector<std::vector<char>>* instance) {
 		try {
 			return Ok(new cv::_OutputArray(*instance));
 		} OCVRS_CATCH(Result<cv::_OutputArray*>)
 	}
 	
-	Result<cv::_InputOutputArray*> cv_VectorOfVectorOfi8_input_output_array(std::vector<std::vector<char>>* instance) {
-		try {
-			return Ok(new cv::_InputOutputArray(*instance));
-		} OCVRS_CATCH(Result<cv::_InputOutputArray*>)
-	}
-	
-}
-
-
-extern "C" {
-	void cv_VectorOfVectorOfu8_delete(std::vector<std::vector<unsigned char>>* instance) {
-		delete instance;
-	}
-
-	std::vector<std::vector<unsigned char>>* cv_VectorOfVectorOfu8_new() {
-		return new std::vector<std::vector<unsigned char>>();
-	}
-
-	size_t cv_VectorOfVectorOfu8_len(const std::vector<std::vector<unsigned char>>* instance) {
-		return instance->size();
-	}
-
-	bool cv_VectorOfVectorOfu8_is_empty(const std::vector<std::vector<unsigned char>>* instance) {
-		return instance->empty();
-	}
-
-	size_t cv_VectorOfVectorOfu8_capacity(const std::vector<std::vector<unsigned char>>* instance) {
-		return instance->capacity();
-	}
-
-	void cv_VectorOfVectorOfu8_shrink_to_fit(std::vector<std::vector<unsigned char>>* instance) {
-		instance->shrink_to_fit();
-	}
-
-	void cv_VectorOfVectorOfu8_reserve(std::vector<std::vector<unsigned char>>* instance, size_t additional) {
-		instance->reserve(instance->size() + additional);
-	}
-
-	void cv_VectorOfVectorOfu8_remove(std::vector<std::vector<unsigned char>>* instance, size_t index) {
-		instance->erase(instance->begin() + index);
-	}
-
-	void cv_VectorOfVectorOfu8_swap(std::vector<std::vector<unsigned char>>* instance, size_t index1, size_t index2) {
-		std::swap((*instance)[index1], (*instance)[index2]);
-	}
-
-	void cv_VectorOfVectorOfu8_clear(std::vector<std::vector<unsigned char>>* instance) {
-		instance->clear();
-	}
-
-	void cv_VectorOfVectorOfu8_push(std::vector<std::vector<unsigned char>>* instance, std::vector<unsigned char>* val) {
-		instance->push_back(*val);
-	}
-
-	void cv_VectorOfVectorOfu8_insert(std::vector<std::vector<unsigned char>>* instance, size_t index, std::vector<unsigned char>* val) {
-		instance->insert(instance->begin() + index, *val);
-	}
-
-	Result<std::vector<unsigned char>*> cv_VectorOfVectorOfu8_get(const std::vector<std::vector<unsigned char>>* instance, size_t index) {
-		return Ok<std::vector<unsigned char>*>(new std::vector<unsigned char>((*instance)[index]));
-	}
-
-	void cv_VectorOfVectorOfu8_set(std::vector<std::vector<unsigned char>>* instance, size_t index, std::vector<unsigned char>* val) {
-		(*instance)[index] = *val;
-	}
-
-	Result<cv::_InputArray*> cv_VectorOfVectorOfu8_input_array(std::vector<std::vector<unsigned char>>* instance) {
-		try {
-			return Ok(new cv::_InputArray(*instance));
-		} OCVRS_CATCH(Result<cv::_InputArray*>)
-	}
-	
-	Result<cv::_OutputArray*> cv_VectorOfVectorOfu8_output_array(std::vector<std::vector<unsigned char>>* instance) {
-		try {
-			return Ok(new cv::_OutputArray(*instance));
-		} OCVRS_CATCH(Result<cv::_OutputArray*>)
-	}
-	
-	Result<cv::_InputOutputArray*> cv_VectorOfVectorOfu8_input_output_array(std::vector<std::vector<unsigned char>>* instance) {
+	Result<cv::_InputOutputArray*> cv_VectorOfVectorOfu8_input_output_array(std::vector<std::vector<char>>* instance) {
 		try {
 			return Ok(new cv::_InputOutputArray(*instance));
 		} OCVRS_CATCH(Result<cv::_InputOutputArray*>)
@@ -3710,96 +3632,6 @@ extern "C" {
 	}
 	
 	Result<cv::_InputOutputArray*> cv_VectorOfi32_input_output_array(std::vector<int>* instance) {
-		try {
-			return Ok(new cv::_InputOutputArray(*instance));
-		} OCVRS_CATCH(Result<cv::_InputOutputArray*>)
-	}
-	
-}
-
-
-extern "C" {
-	void cv_VectorOfi8_delete(std::vector<char>* instance) {
-		delete instance;
-	}
-
-	std::vector<char>* cv_VectorOfi8_new() {
-		return new std::vector<char>();
-	}
-
-	size_t cv_VectorOfi8_len(const std::vector<char>* instance) {
-		return instance->size();
-	}
-
-	bool cv_VectorOfi8_is_empty(const std::vector<char>* instance) {
-		return instance->empty();
-	}
-
-	size_t cv_VectorOfi8_capacity(const std::vector<char>* instance) {
-		return instance->capacity();
-	}
-
-	void cv_VectorOfi8_shrink_to_fit(std::vector<char>* instance) {
-		instance->shrink_to_fit();
-	}
-
-	void cv_VectorOfi8_reserve(std::vector<char>* instance, size_t additional) {
-		instance->reserve(instance->size() + additional);
-	}
-
-	void cv_VectorOfi8_remove(std::vector<char>* instance, size_t index) {
-		instance->erase(instance->begin() + index);
-	}
-
-	void cv_VectorOfi8_swap(std::vector<char>* instance, size_t index1, size_t index2) {
-		std::swap((*instance)[index1], (*instance)[index2]);
-	}
-
-	void cv_VectorOfi8_clear(std::vector<char>* instance) {
-		instance->clear();
-	}
-
-	void cv_VectorOfi8_push(std::vector<char>* instance, char val) {
-		instance->push_back(val);
-	}
-
-	void cv_VectorOfi8_insert(std::vector<char>* instance, size_t index, char val) {
-		instance->insert(instance->begin() + index, val);
-	}
-
-	Result<char> cv_VectorOfi8_get(const std::vector<char>* instance, size_t index) {
-		return Ok<char>((*instance)[index]);
-	}
-
-	void cv_VectorOfi8_set(std::vector<char>* instance, size_t index, char val) {
-		(*instance)[index] = val;
-	}
-
-	const char* cv_VectorOfi8_data(const std::vector<char>* instance) {
-		return instance->data();
-	}
-	
-	char* cv_VectorOfi8_data_mut(std::vector<char>* instance) {
-		return instance->data();
-	}
-	
-		std::vector<char>* cv_VectorOfi8_clone(const std::vector<char>* instance) {
-			return new std::vector<char>(*instance);
-		}
-	
-	Result<cv::_InputArray*> cv_VectorOfi8_input_array(std::vector<char>* instance) {
-		try {
-			return Ok(new cv::_InputArray(*instance));
-		} OCVRS_CATCH(Result<cv::_InputArray*>)
-	}
-	
-	Result<cv::_OutputArray*> cv_VectorOfi8_output_array(std::vector<char>* instance) {
-		try {
-			return Ok(new cv::_OutputArray(*instance));
-		} OCVRS_CATCH(Result<cv::_OutputArray*>)
-	}
-	
-	Result<cv::_InputOutputArray*> cv_VectorOfi8_input_output_array(std::vector<char>* instance) {
 		try {
 			return Ok(new cv::_InputOutputArray(*instance));
 		} OCVRS_CATCH(Result<cv::_InputOutputArray*>)
